@@ -1,5 +1,5 @@
 {
-  "name": "build-a-bot",
+  "name": "@summerdeviscool/build-a-bot",
   "version": "1.0.0",
   "description": "The next gen of the Build-A-Bot framework.",
   "main": "src/app.js",
