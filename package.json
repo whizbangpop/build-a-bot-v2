@@ -1,6 +1,6 @@
 {
   "name": "@summerdeviscool/build-a-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The next gen of the Build-A-Bot framework.",
   "main": "src/app.js",
   "repository": "https://gitlab.com/summerdev-studios/build-a-bot-v2.git",
