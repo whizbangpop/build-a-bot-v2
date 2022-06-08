@@ -1,0 +1,16 @@
+{
+  "name": "build-a-bot",
+  "version": "1.0.0",
+  "description": "This is a template project, built and powered by Build-A-Bot",
+  "main": "bot.js",
+  "author": "SummerDev ",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "discord.js": "^13.8.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.1.0",
+    "nanospinner": "^1.1.0"
+  }
+}

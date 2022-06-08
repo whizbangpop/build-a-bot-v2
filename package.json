@@ -1,0 +1,22 @@
+{
+  "name": "build-a-bot",
+  "version": "1.0.0",
+  "description": "The next gen of the Build-A-Bot framework.",
+  "main": "src/app.js",
+  "repository": "https://gitlab.com/summerdev-studios/build-a-bot-v2.git",
+  "author": "summerisadev <101482788+summerisadev@users.noreply.github.com>",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "chalk-animation": "^2.0.2",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.4",
+    "nanospinner": "^1.1.0"
+  },
+  "bin": {
+    "build-a-bot": "src/app.js"
+  }
+}
