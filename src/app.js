@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
-import chalk from "chalk";
 import inquirer from "inquirer";
-import chalkAnimation from "chalk-animation";
 import figlet from "figlet";
 import { createSpinner } from "nanospinner";
-import axios from "axios";
-import fs from "fs-extra";
+import fse from "fs-extra";
+import * as fs from 'fs';
 
-let appId = 0
+let appId = ""
 let userName = ""
 let type = ""
 
@@ -57,14 +55,43 @@ await askType()
 
 if (type === "JavaScript") {
     const spinner1 = createSpinner('Copying source code').start()
-    await fs.mkdirsSync('./src1')
-    fs.copy('./templates/javascript', './src1', function (err) {
+    await fse.mkdirsSync('./src1')
+    fse.copy('./templates/javascript', './src1', function (err) {
         if (err) {
             spinner1.error({text: `Something went wrong: ${err}`})
             console.log(err)
         } else {
             spinner1.success({ text: 'Copied files!' })
         }
+    })
+
+    const spinner2 = createSpinner('Creating config files').start()
+    const fileStream1 = fs.createWriteStream('bab.config.js');
+    fileStream1.once('open', function (fd) {
+        fileStream1.write(`const token = ${appId};\n`)
+        fileStream1.write(`const appName = ${userName};\n`)
+        fileStream1.write(`\nexport { token, appName }`)
+    })
+}
+
+if (type === "TypeScript") {
+    const spinner1 = createSpinner('Copying source code').start()
+    await fse.mkdirsSync('./src1')
+    fse.copy('./templates/typescript', './src1', function (err) {
+        if (err) {
+            spinner1.error({text: `Something went wrong: ${err}`})
+            console.log(err)
+        } else {
+            spinner1.success({ text: 'Copied files!' })
+        }
+    })
+
+    const spinner2 = createSpinner('Creating config files').start()
+    const fileStream1 = fs.createWriteStream('bab.config.js');
+    fileStream1.once('open', function (fd) {
+        fileStream1.write(`const token = ${appId};\n`)
+        fileStream1.write(`const appName = ${userName};\n`)
+        fileStream1.write(`\nexport { token, appName }`)
     })
 }
 
